@@ -1,0 +1,160 @@
+/* Reset e fonte */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #000; /* Fundo preto */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    color: #fff;
+}
+
+/* Header e logo */
+.header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    width: 300px;
+    filter: drop-shadow(0 0 10px #00f); /* efeito LED azul */
+}
+
+/* Navbar com efeito neon */
+.navbar {
+    background: linear-gradient(90deg, #001f3f, #0074D9);
+    padding: 20px 40px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px #00f;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    border: 1px solid #0074D9;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar li {
+    margin: 0 20px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    padding: 10px 16px;
+    border-radius: 5px;
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    background: rgba(0, 123, 255, 0.3);
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #0074D9;
+    text-shadow: 0 0 10px #00f, 0 0 20px #00f;
+}
+
+/* Estilização do formulário de busca */
+.search-form {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+}
+
+.search-form input[type="text"],
+.search-form button {
+    width: 250px; /* mesmo tamanho para input e botão */
+    height: 40px; /* mesma altura */
+    box-sizing: border-box; /* garante que o padding não altere a largura */
+}
+
+.search-form input[type="text"] {
+    padding: 10px 14px;
+    border: none;
+    border-radius: 20px 0 0 20px;
+    font-size: 16px;
+    outline: none;
+    background: #001f3f;
+    color: #fff;
+    transition: width 0.3s ease;
+}
+
+.search-form input[type="text"]::placeholder {
+    color: #7FDBFF;
+}
+
+.search-form button {
+    padding: 10px 20px;
+    border: none;
+    background: #0074D9;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 0 20px 20px 0;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.search-form button:hover {
+    background: #001f3f;
+    box-shadow: 0 0 10px #00f;
+}
+
+/* Conteúdo com fundo escuro e detalhes LED (mantido somente fundo e box-shadow) */
+.home-container, .content {
+    background: #111;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px #0074D9;
+    text-align: center;
+    max-width: 500px;
+    width: 100%;
+}
+
+/* Definindo o texto do conteúdo para preto */
+.home-container h1, .content h3, .content p, .content ul {
+    color: #000;
+}
+
+/* Links internos no conteúdo */
+.content a {
+    color: #7FDBFF;
+    text-decoration: underline;
+}
+
+/* Botão padrão com efeito neon */
+button {
+    padding: 12px 20px;
+    background: #0074D9;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background: #001f3f;
+    box-shadow: 0 0 10px #00f;
+}
+
+/* Exemplo de animação LED para títulos (opcional) */
+/* @keyframes ledBlink {
+    0%, 100% { text-shadow: 0 0 10px #00f, 0 0 20px #00f, 0 0 30px #0074D9; }
+    50% { text-shadow: 0 0 20px #00f, 0 0 30px #00f, 0 0 40px #0074D9; }
+} */
+
+/* Remova ou comente qualquer regra de animação LED (como @keyframes ledBlink) */
