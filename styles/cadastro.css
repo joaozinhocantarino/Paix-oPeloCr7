@@ -6,7 +6,10 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #000, #001f3f); /* fundo escuro com gradiente */
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url("https://www.shutterstock.com/image-photo/illuminated-soccer-field-goalpost-night-600nw-2587304517.jpg");
+    background-size: cover;
+    background-position: center;
     color: #fff;
     min-height: 100vh;
     display: flex;
