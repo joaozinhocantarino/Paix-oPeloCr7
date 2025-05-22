@@ -202,3 +202,9 @@ button:hover {
 } */
 
 /* Remova ou comente qualquer regra de animação LED (como @keyframes ledBlink) */
+
+mark {
+    background-color: yellow;
+    color: #000;
+    padding: 0 2px;
+}
