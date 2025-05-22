@@ -14,14 +14,39 @@ body {
     color: #fff;
 }
 
+/* Container com aparência de trave de gol com rede */
 .login-container {
+    position: relative;
     width: 100%;
     max-width: 400px;
-    padding: 30px 20px;
-    background: #111; /* Fundo bem escuro */
-    border: 2px solid #0074D9; /* Borda azul */
-    border-radius: 8px;
-    box-shadow: 0 0 15px #0074D9;
+    padding: 60px 20px 20px; /* espaço extra no topo para o crossbar */
+    background: rgba(255, 255, 255, 0.8); /* fundo branco com transparência para permitir ver o fundo do site */
+    /* Bordas das traves, agora um pouco mais escuras */
+    border-top: 16px solid #ddd;  /* travessão mais espesso */
+    border-left: 12px solid #ddd;  /* poste esquerdo */
+    border-right: 12px solid #ddd; /* poste direito */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 0;  /* formato retangular */
+    overflow: hidden;
+}
+
+/* Simula os postes verticais que se estendem acima do container */
+.login-container::before,
+.login-container::after {
+    content: "";
+    position: absolute;
+    top: -40px; /* ajuste para acomodar os postes maiores */
+    width: 12px; /* largura dos postes */
+    height: 40px; /* altura dos postes */
+    background: #ddd;
+}
+
+.login-container::before {
+    left: 0;
+}
+
+.login-container::after {
+    right: 0;
 }
 
 .login-container h1 {
@@ -97,4 +122,36 @@ button[type="button"]:hover {
     border-radius: 4px;
     text-align: center;
     display: none;
+}
+
+/* Overlay para simular as redes */
+.net-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    z-index: 1; /* camada atrás */
+    background: 
+        repeating-linear-gradient(
+            to right,
+            rgba(0, 0, 0, 0.3) 0,
+            rgba(0, 0, 0, 0.3) 2px,
+            transparent 2px,
+            transparent 26px
+        ),
+        repeating-linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.3) 0,
+            rgba(0, 0, 0, 0.3) 2px,
+            transparent 2px,
+            transparent 26px
+        );
+}
+
+/* Garanta que o formulário fique na frente da rede */
+.login-container form {
+    position: relative;
+    z-index: 2;
 }
