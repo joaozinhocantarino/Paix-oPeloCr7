@@ -19,13 +19,18 @@ body {
 
 /* Container de cadastro com efeito LED */
 .container {
-    max-width: 400px;
+    position: relative;
+    width: 100%;
+    max-width: 600px; /* largura ajustada para a trave */
     margin: 5% auto;
-    padding: 30px 20px;
-    background: #111; /* fundo bem escuro */
-    border: 2px solid #0074D9; /* borda azul */
+    padding: 60px 20px 20px; /* espaço extra no topo para o crossbar */
+    background: rgba(255, 255, 255, 0.8); /* fundo branco com transparência */
+    border-top: 16px solid #aaa; /* travessão mais espesso */
+    border-left: 12px solid #aaa; /* poste esquerdo */
+    border-right: 12px solid #aaa; /* poste direito */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     border-radius: 8px;
-    box-shadow: 0 0 15px #0074D9;
+    overflow: hidden;
 }
 
 form {
@@ -87,4 +92,23 @@ button[type="submit"]:hover {
     background: #001f3f;
     box-shadow: 0 0 15px #00f;
     transform: scale(1.02);
+}
+
+/* Simula os postes verticais que se estendem acima do container */
+.container::before,
+.container::after {
+    content: "";
+    position: absolute;
+    top: -40px;
+    width: 12px;
+    height: 40px;
+    background: #aaa;
+}
+
+.container::before {
+    left: 0;
+}
+
+.container::after {
+    right: 0;
 }

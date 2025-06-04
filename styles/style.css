@@ -91,6 +91,8 @@ body {
     justify-content: space-between;
     gap: 4%;
     margin-top: 10px;
+    position: relative;
+    z-index: 2; /* Garante que os botões fiquem na frente */
 }
 
 button[type="submit"],
